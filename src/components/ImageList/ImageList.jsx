@@ -13,11 +13,11 @@ function ImageList() {
   const images = useSelector(store => store.images);
 
   return (
-    <div className="grid-col grid-col_6">
+    <div className="grid-col grid-col_7">
       <h3>My Images:</h3>
       {images.map((image) => {
         return (
-          <div key={image.id} style={ {maxWidth: '50%'} }>
+          <div key={image.id} className="width-80">
             <p>{image.description}</p>
             <img src={image.image_path}/>
           </div>
