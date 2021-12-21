@@ -22,4 +22,4 @@ INSERT INTO "user"
 INSERT INTO "image"
   ("description", "image_path", "owner_id")
   VALUES
-  ('Blue Gitane Tour de France', 'https://res.cloudinary.com/midaircloud/image/upload/v1640120363/testing/vfebnba1nhllqskrb5ns.jpg', 1);
+  ('Blue Gitane Tour de France', 'https://res.cloudinary.com/midaircloud/image/upload/v1640120563/testing/vsbtqbhno7tky8k7orig.jpg', 1);
