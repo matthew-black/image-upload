@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS "image";
 DROP TABLE IF EXISTS "user";
-
+ 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
@@ -17,10 +17,9 @@ CREATE TABLE "image" (
 INSERT INTO "user"
   ("username", "password")
   VALUES
-  ('matt', '$2a$10$/KtP6uAI0ivyps7D2aVIRuejSLVE9sFHqpvqnGoMz2kYg3/gSXYIS');
+  ('matt', '$2a$10$/KtP6uAI0ivyps7D2aVIRuejSLVE9sFHqpvqnGoMz2kYg3/gSXYIS'); --password: 123
 
 INSERT INTO "image"
   ("description", "image_path", "owner_id")
   VALUES
-  ('Bronze Gitane Tour de France', 'https://i.pinimg.com/originals/cb/5c/7e/cb5c7efe818df4c202017123a7f07aa5.jpg', 1),
-  ('Blue Gitane Tour de France', 'https://www.velovilles.com/out/pictures/master/product/1/gitane-tour-de-france-rennrad-bicycle-velo-_1768.jpg', 1);
+  ('Blue Gitane Tour de France', 'https://res.cloudinary.com/midaircloud/image/upload/v1640120363/testing/vfebnba1nhllqskrb5ns.jpg', 1);
