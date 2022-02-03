@@ -9,14 +9,20 @@ function ImageUploadForm() {
 
   const onImageSubmit = (e) => {
     e.preventDefault();
-    const imageForm = new FormData();
-    imageForm.append('image', selectedFile);
-    imageForm.append('description', imageDescription)
-
     dispatch({
       type: 'UPLOAD_IMAGE',
-      payload: imageForm
+      payload: {
+        imageDescription,
+        selectedFile
+      }
     })
+    setImageDescription('');
+    setSelectedFile('');
+  }
+
+  const onFileSelect = (e) => {
+    console.log(e.target.files[0]);
+    setSelectedFile(e.target.files[0])
   }
 
   return (
@@ -31,7 +37,7 @@ function ImageUploadForm() {
           onChange={(e) => setImageDescription(e.target.value)}/>
         <input
           type="file"
-          onChange={(e) => setSelectedFile(e.target.files[0])}/>
+          onChange={(e) => onFileSelect(e)}/>
         <button>Submit</button>
       </form>
     </div>

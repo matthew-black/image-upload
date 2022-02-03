@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 const cloudinaryUpload = require('../modules/cloudinary-config');
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 
 router.get('/', (req, res) => {
@@ -20,10 +21,10 @@ router.get('/', (req, res) => {
     })
 });
 
-
-router.post('/', cloudinaryUpload.single('image'), async (req, res) => {
+router.post('/', rejectUnauthenticated, cloudinaryUpload.single('image'), async (req, res) => {
   const imageDescription = req.body.description;
   const imageUrl = req.file.path;
+  console.log('was uploaded to cloudinary ==>', req.file);
   const userId = req.user.id;
 
   const sqlText = `
